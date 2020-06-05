@@ -11,5 +11,10 @@ namespace SchoolPractice
         private int StudentId;
         private int NumberOfCredits;
         private double Gpa;
+
+        public string name { get; set;  }
+        public int studentId { get; set; }
+        public int numberOfCredits { get; set; }
+        public double gpa { get; set; }
     }
 }
