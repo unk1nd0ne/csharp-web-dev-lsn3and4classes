@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 // Start working here with your Student class.
 // To instantiate the Student class, add your code to the Main method in Program
@@ -46,11 +47,49 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate fields: NumberOfCredits, Gpa
+            double totalQualityScore = (this.Gpa * this.NumberOfCredits) + (grade * courseCredits);
+            this.NumberOfCredits += courseCredits;
+            this.Gpa = totalQualityScore / this.NumberOfCredits;
+
         }
 
         public string GetGradeLevel()
         {
             // Determine the grade level of the student based on NumberOfCredits
+            if (this.NumberOfCredits < 30)
+            {
+                return "Freshman";
+            }
+            else if (this.NumberOfCredits < 60)
+            {
+                return "Sophmore";
+            }
+            else if (this.NumberOfCredits < 90)
+            {
+                return "Junior";
+            }
+            else 
+            {
+                return "Senior";
+            
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Student student &&
+                   Name == student.Name &&
+                   studentId == student.studentId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, studentId);
+        }
+
+        public override string ToString()
+        {
+            return Name + " (Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
         }
     }
     }
