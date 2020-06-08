@@ -6,14 +6,14 @@ namespace SchoolPractice
 {
     class Teacher
     {
-        private string FirstName;
-        private string LastName;
-        private string Subject;
-        private int YearsTeaching;
+        private string firstName { get; set; }
+        private string lastName { get; set; }
+        private string subject { get; set; }
+        private int yearsTeaching { get; set; }
 
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string subject { get; set; }
-        public int yearsTeaching { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Subject { get; set; }
+        public int YearsTeaching { get; set; }
     }
 }
