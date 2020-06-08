@@ -1,20 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace SchoolPractice
 {
-    public class Teacher
+    class Teacher
     {
+        private string firstName { get; set; }
+        private string lastName { get; set; }
+        private string subject { get; set; }
+        private int yearsTeaching { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Subject { get; set; }
         public int YearsTeaching { get; set; }
-
-        public Teacher(string firstName, string lastName, string subject, int yearsTeaching)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            Subject = subject;
-            YearsTeaching = yearsTeaching;
-        }
-
     }
 }

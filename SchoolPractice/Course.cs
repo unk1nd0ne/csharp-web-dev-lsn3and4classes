@@ -1,20 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace SchoolPractice
 {
-    public class Course
+    class Course
     {
-        public string Topic { get; set; }
-        public Teacher Instructor { get; set; }
-        public List<Student> enrolledStudents { get; set; }
+        private string CourseName;
+        private string CourseID;
+        private Teacher CourseInstructor;
+        private int Credits;
+        private List<Student> CourseRoster = new List<Student>();
 
 
-        // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather than
-        //  just the class fields.
+        public string courseName { get; set; }
+        public string courseID { get; set; }
+        public Teacher courseInstructor { get; set; }
+        public List<Student> courseRoster { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   CourseName == course.CourseName &&
+                   CourseID == course.CourseID;
+        }
 
-        // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
-        //  Course objects equal.
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(CourseName, CourseID);
+        }
+
+        public override string ToString()
+        {
+            return CourseName + " (Course ID: " + CourseID + ", Credits: " + Credits + ")";
+        }
     }
 }
